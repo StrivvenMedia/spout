@@ -1,0 +1,100 @@
+{
+    "title": "Grouped Data",
+    "contents": [
+        [
+            "User Name",
+            "First Name",
+            "Last Name",
+            "Resume Name",
+            "Created",
+            "Last Modified"
+        ],
+        [
+            "John@CBC.com",
+            "John",
+            "Denver"
+        ],
+        [
+            "John@CBC.com",
+            "John",
+            "Denver",
+            "John Denver Resume September 26, 2019",
+            "09\/26\/2019",
+            "11\/27\/2019"
+        ],
+        [
+            "iDostoyevsky@CBC.com",
+            "Fyodor",
+            "Dostoyevsky"
+        ],
+        [
+            "iDostoyevsky@CBC.com",
+            "Fyodor",
+            "Dostoyevsky",
+            "Fyodor Dostoyevsky Resume May 18, 2019",
+            "05\/18\/2019",
+            "05\/18\/2019"
+        ],
+        [
+            "tCamus@CBC.com",
+            "Albert",
+            "Camus"
+        ],
+        [
+            "tCamus@CBC.com",
+            "Albert",
+            "Camus",
+            "Albert Camus Resume December 18, 2019",
+            "12\/18\/2019",
+            "12\/18\/2019"
+        ],
+        [
+            "Jean Paul@CBC.com",
+            "Jean Paul",
+            "Sartre"
+        ],
+        [
+            "Jean Paul@CBC.com",
+            "Jean Paul",
+            "Sartre",
+            "Jean Paul Sartre Resume May 17, 2019",
+            "05\/17\/2019",
+            "05\/17\/2019"
+        ],
+        [
+            "testAlbert",
+            "test",
+            "test"
+        ],
+        [
+            "testAlbert",
+            "test",
+            "test",
+            "Assignment Resume - test, test",
+            "01\/08\/2020",
+            "01\/08\/2020"
+        ],
+        [
+            "testAlbert",
+            "test",
+            "test",
+            "test test Resume January 9, 2020",
+            "01\/09\/2020",
+            "01\/09\/2020"
+        ]
+    ],
+    "grouping": [
+        0,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1
+    ]
+}

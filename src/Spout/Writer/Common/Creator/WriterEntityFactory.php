@@ -101,8 +101,7 @@ class WriterEntityFactory
         $cells = array_map(function ($cellValue) {
             return new Cell($cellValue);
         }, $cellValues);
-
-        return new Row($cells, $rowStyle);
+        return new Row($cells, $rowStyle, $groupingOn);
     }
 
     /**
