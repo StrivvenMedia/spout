@@ -19,15 +19,23 @@ class Row
     protected $style;
 
     /**
+     * The row style
+     * @var int
+     */
+    protected $grouping;
+
+    /**
      * Row constructor.
      * @param Cell[] $cells
      * @param Style|null $style
+     * @param int|null $grouping
      */
     public function __construct(array $cells, $style)
     {
         $this
             ->setCells($cells)
-            ->setStyle($style);
+            ->setStyle($style)
+            ->setGrouping($grouping);
     }
 
     /**
@@ -113,6 +121,25 @@ class Row
     public function setStyle($style)
     {
         $this->style = $style ?: new Style();
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getGrouping()
+    {
+        return $this->grouping;
+    }
+
+    /**
+     * @param Style|null $style
+     * @return Row
+     */
+    public function setGrouping($grouping)
+    {
+        $this->grouping = $grouping;
 
         return $this;
     }

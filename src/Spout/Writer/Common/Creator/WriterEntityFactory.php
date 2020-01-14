@@ -96,7 +96,7 @@ class WriterEntityFactory
      * @param Style|null $rowStyle
      * @return Row
      */
-    public static function createRowFromArray(array $cellValues = [], Style $rowStyle = null)
+    public static function createRowFromArray(array $cellValues = [], Style $rowStyle = null, int $groupingOn = null)
     {
         $cells = array_map(function ($cellValue) {
             return new Cell($cellValue);
