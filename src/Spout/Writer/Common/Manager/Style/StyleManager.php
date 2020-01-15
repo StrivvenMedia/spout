@@ -81,7 +81,7 @@ class StyleManager implements StyleManagerInterface
         }
 
         if ($cell->isString() && strpos($cell->getValue(), "\n") !== false) {
-            $cellStyle->setShouldWrapText();
+            $cellStyle->setShouldWrapText($cellStyle->shouldWrapText());
         }
 
         return $cellStyle;
