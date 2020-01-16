@@ -134,7 +134,7 @@ class Row
     }
 
     /**
-     * @param Style|null $style
+     * @param int|null $grouping
      * @return Row
      */
     public function setGrouping($grouping)

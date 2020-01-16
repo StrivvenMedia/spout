@@ -94,6 +94,7 @@ class WriterEntityFactory
     /**
      * @param array $cellValues
      * @param Style|null $rowStyle
+     * @param int|null $groupingOn
      * @return Row
      */
     public static function createRowFromArray(array $cellValues = [], Style $rowStyle = null, int $groupingOn = null)

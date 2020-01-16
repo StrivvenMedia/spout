@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1); 
+ini_set('display_startup_errors', 1); 
+error_reporting(E_ALL);
+
 /** The following is a test file to test
  *   new features added to this spout repository
  */
@@ -17,33 +21,34 @@ $writer = WriterEntityFactory::createXLSXWriter();
 $writer->openToFile($filePath);
 
 /** Create a base style with the StyleBuilder */
-$firstLineStyle = (new StyleBuilder())
-    ->setFontBold()
+$baseStyle = (new StyleBuilder())
     ->setFontSize(11)
     ->build();
 
-    $dataLineStyle = (new StyleBuilder())
-    ->setFontSize(11)
-    ->build();
-
-//echo var_dump($testData["contents"]);
-//echo var_dump($testData["grouping"]);
-
-/*Todo: change to foreach*/
-for($i = 0; $i < sizeof($testData["contents"]); $i+=1){
-    //test if the rows are going to be grouped
-    $sheet = $testData["contents"][$i];
-    $groupingOn = $testData["grouping"][$i];
-    if ($i == 0){
-
-        $row = WriterEntityFactory::createRowFromArray($sheet,$firstLineStyle,$groupingOn);
-
+/*Todo: */
+for($j = 0; $j < sizeof($testData); $j+=1){
+    if ($j == 0){
+        $firstSheet = $writer->getCurrentSheet();
+        $firstSheet->setName($testData[$j]["title"]);
     }else{
-        $row = WriterEntityFactory::createRowFromArray($sheet,$dataLineStyle,$groupingOn);
-
+        $newSheet = $writer->addNewSheetAndMakeItCurrent();
+        $newSheet->setName($testData[$j]["title"]);
     }
-    $writer->addRow($row);
+    for($i = 0; $i < sizeof($testData["contents"]); $i+=1){
+        //test if the rows are going to be grouped
+        $sheet = $testData["contents"][$i];
+        $groupingOn = $testData["grouping"][$i];
+        if ($i == 0){
+            $firstLineStyle = clone $baseStyle;
+            $firstLineStyle->setFontBold();
+            $row = WriterEntityFactory::createRowFromArray($sheet,$firstLineStyle,$groupingOn);
+        }else{
+            
+            $row = WriterEntityFactory::createRowFromArray($sheet,$baseStyle,$groupingOn);
 
+        }
+        $writer->addRow($row);
+    }
 }
 
 /** Add the row to the writer */
