@@ -94,15 +94,15 @@ class WriterEntityFactory
     /**
      * @param array $cellValues
      * @param Style|null $rowStyle
+     * @param int|null $groupingOn
      * @return Row
      */
-    public static function createRowFromArray(array $cellValues = [], Style $rowStyle = null)
+    public static function createRowFromArray(array $cellValues = [], Style $rowStyle = null, int $groupingOn = null)
     {
         $cells = array_map(function ($cellValue) {
             return new Cell($cellValue);
         }, $cellValues);
-
-        return new Row($cells, $rowStyle);
+        return new Row($cells, $rowStyle, $groupingOn);
     }
 
     /**

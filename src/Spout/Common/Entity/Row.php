@@ -17,17 +17,25 @@ class Row
      * @var Style
      */
     protected $style;
+    
+    /**
+     * The grouping for this row
+     * @var Grouping
+     */
+    protected $grouping = '';
 
     /**
      * Row constructor.
      * @param Cell[] $cells
      * @param Style|null $style
+     * @param Grouping
      */
-    public function __construct(array $cells, $style)
+    public function __construct(array $cells, $style, $grouping)
     {
         $this
             ->setCells($cells)
-            ->setStyle($style);
+            ->setStyle($style)
+            ->setGrouping($grouping);
     }
 
     /**
@@ -116,7 +124,25 @@ class Row
 
         return $this;
     }
+    
+    /**
+     * @return int
+     */
+    public function getGrouping()
+    {
+        return $this->grouping;
+    }
 
+    /**
+     * @param int|null $grouping
+     * @return Row
+     */
+    public function setGrouping($grouping)
+    {
+        $this->grouping = $grouping;
+
+        return $this;
+    }
     /**
      * @return array The row values, as array
      */

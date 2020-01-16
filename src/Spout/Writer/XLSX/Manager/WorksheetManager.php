@@ -165,8 +165,9 @@ EOD;
         $rowStyle = $row->getStyle();
         $rowIndexOneBased = $worksheet->getLastWrittenRowIndex() + 1;
         $numCells = $row->getNumCells();
-
-        $rowXML = '<row r="' . $rowIndexOneBased . '" spans="1:' . $numCells . '">';
+        $grouping = $row->getGrouping();
+        
+        $rowXML = '<row r="' . $rowIndexOneBased . '" spans="1:' . $numCells . '" outlineLevel="' . $grouping . '">';
 
         foreach ($row->getCells() as $columnIndexZeroBased => $cell) {
             $rowXML .= $this->applyStyleAndGetCellXML($cell, $rowStyle, $rowIndexOneBased, $columnIndexZeroBased);
