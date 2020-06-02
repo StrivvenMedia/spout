@@ -114,12 +114,12 @@ EOD;
 
         fwrite($sheetFilePointer, self::SHEET_XML_FILE_HEADER);
 
-        // Set freeze on the header row
-        fwrite($sheetFilePointer, '<sheetViews><sheetView showRowColHeaders="1" showGridLines="true" workbookViewId="0" tabSelected="1">'
-            .'<pane state="frozen" activePane="bottomLeft" topLeftCell="A2" ySplit="1"/>'
-            .'<selection sqref="A1" activeCell="A1" pane="bottomLeft"/></sheetView></sheetViews>');
+        // Strivven mod: Set freeze on the header row
+        // fwrite($sheetFilePointer, '<sheetViews><sheetView showRowColHeaders="1" showGridLines="true" workbookViewId="0" tabSelected="1">'
+        //     .'<pane state="frozen" activePane="bottomLeft" topLeftCell="A2" ySplit="1"/>'
+        //     .'<selection sqref="A1" activeCell="A1" pane="bottomLeft"/></sheetView></sheetViews>');
 
-        // Set column width for all
+        // Strivven mod: Set column width for all
         fwrite($sheetFilePointer, '<cols><col min="1" max="64" width="25" customWidth="1"/></cols>');
 
         fwrite($sheetFilePointer, '<sheetData>');
